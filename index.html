@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Race night</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body ng-app="ngRace" ng-controller="raceController">
+		<!-- Nav Bar
+		<nav class="navbar navbar-default">
+				<div class="container">
+						<div class="navbar-header">
+								<a class="navbar-brand" href="#">Race night</a>
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+								<li>
+										<a href="#">Next race <span class="glyphicon glyphicon-chevron-right"></span></a>
+								</li>
+						</ul>
+				</div>
+		</nav>
+		-->
+
+		<div ng-repeat="race in races" ng-show="race.id==1">
+		<div class="jumbotron">
+			<div class="container">
+				<div class="col-md-6">
+					<h1>Race night</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dicta nihil assumenda, consequuntur natus.</p>
+				</div>
+				<div class="col-md-6">
+					<table class="table">
+						<tr>
+							<th>Race number</th>
+							<td>{{race.id}}</td>
+						</tr>
+						<tr>
+							<th>Race sponsor</th>
+							<td>{{race.sponsor}}</td>
+						</tr>
+						<tr>
+							<th>Bets placed</th>
+							<td class="sold" ng-bind="race.sold">{{race.sold}}</td>
+						</tr>
+						<tr>
+							<th>Race pot</th>
+							<td>{{race.pot | currency}}</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Horses -->
+		<div class="main">
+			<div class="container">
+				<div class="col-md-3 horse" ng-repeat="horse in race.horses">
+					<div class="horse-box">
+						<table class="table">
+							<tr>
+								<th class="name" colspan="2"><span class="label label-primary">{{horse.id}}</span> {{horse.name}}</th>
+							</tr>
+							<tr>
+								<th>Selling at</th>
+								<td>{{horse.price | currency}}</td>
+							</tr>
+							<tr>
+								<th>Sold</th>
+								<td class="sold">{{horse.sold}} <button type="button" class="btn btn-default btn-xs" ng-click="buyHorse(horse,race)">+</button><button type="button" class="btn btn-default btn-xs" ng-click="unbuyHorse(horse,race)">-</button></td>
+							</tr>
+							<tr>
+								<th>Pot</th>
+								<td>{{horse.pot | currency}}</td>
+							</tr>
+							<tr>
+								<th>Each wins</th>
+								<td>{{horse.eachwin | currency}}</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</body>
+
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.13.4/ui-bootstrap-tpls.min.js"></script>
+	<script src="app.js"></script>
+	<script src="scripts/raceController.js"></script>
+	<script src="scripts/raceFactory.js"></script>
+</html>

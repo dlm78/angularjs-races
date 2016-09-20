@@ -1,0 +1,1 @@
+angular.module('ngRace', ['ui.bootstrap']);
