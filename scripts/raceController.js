@@ -10,7 +10,7 @@ angular
 			race.pot += horse.price;
 			horse.pot += horse.price;
 			horse.price = horse.price + $increment;
-			horse.eachwin = horse.pot/horse.sold;
+			horse.eachwin = race.pot/horse.sold;
 			race.sold++;
 			
 
@@ -22,7 +22,7 @@ angular
 			horse.pot -= horse.price;
 			race.pot -= horse-price;
 			horse.price = horse.price - $increment;
-			horse.eachwin = horse.pot/horse.sold;
+			horse.eachwin = race.pot/horse.sold;
 			race.sold--;
 		}
 

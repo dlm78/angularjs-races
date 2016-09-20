@@ -4,6 +4,8 @@ body {
 }
 .jumbotron {
 	background: rgba(0,0,0,0.8);
+	padding-top: 40px;
+    padding-bottom: 20px;
 }
 .jumbotron * {
 	color: #fff;
@@ -11,10 +13,17 @@ body {
 .jumbotron .h1, .jumbotron h1 {
 	margin-top: 0;
 	color: #a9c522;
+	font-size: 72px;
+}
+.jumbotron p.strapline {
+	font-size: 30px;
 }
 .jumbotron .table>tbody>tr>td,
 .jumbotron .table>tbody>tr>th {
 	border-top-color: #7d7c7c;
+}
+.sponsor {
+	max-width: 100%;
 }
 .table>tbody>tr>th {
 	font-weight: normal;

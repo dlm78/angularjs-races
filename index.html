@@ -25,29 +25,32 @@
 		<div ng-repeat="race in races" ng-show="race.id==1">
 		<div class="jumbotron">
 			<div class="container">
-				<div class="col-md-6">
-					<h1>Race night</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dicta nihil assumenda, consequuntur natus.</p>
+				<div class="col-md-5">
+					<h1>Race Night</h1>
+					<p class="strapline">And the drinking of the fines</p>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-5">
 					<table class="table">
 						<tr>
 							<th>Race number</th>
 							<td>{{race.id}}</td>
 						</tr>
 						<tr>
-							<th>Race sponsor</th>
+							<th>Sponsored by</th>
 							<td>{{race.sponsor}}</td>
 						</tr>
 						<tr>
-							<th>Bets placed</th>
+							<th>Race bets in</th>
 							<td class="sold" ng-bind="race.sold">{{race.sold}}</td>
 						</tr>
 						<tr>
-							<th>Race pot</th>
+							<th>Race fund</th>
 							<td>{{race.pot | currency}}</td>
 						</tr>
 					</table>
+				</div>
+				<div class="col-md-2">
+					<img class="sponsor" ng-src="images/{{race.sponsor}}.jpg">
 				</div>
 			</div>
 		</div>
@@ -59,22 +62,22 @@
 					<div class="horse-box">
 						<table class="table">
 							<tr>
-								<th class="name" colspan="2"><span class="label label-primary">{{horse.id}}</span> {{horse.name}}</th>
+								<th class="name" colspan="2"><span class="label label-primary">Horse {{horse.id}}</span></th>
 							</tr>
 							<tr>
 								<th>Selling at</th>
 								<td>{{horse.price | currency}}</td>
 							</tr>
 							<tr>
-								<th>Sold</th>
+								<th>Bets in</th>
 								<td class="sold">{{horse.sold}} <button type="button" class="btn btn-default btn-xs" ng-click="buyHorse(horse,race)">+</button><button type="button" class="btn btn-default btn-xs" ng-click="unbuyHorse(horse,race)">-</button></td>
 							</tr>
 							<tr>
-								<th>Pot</th>
+								<th>Bet total</th>
 								<td>{{horse.pot | currency}}</td>
 							</tr>
 							<tr>
-								<th>Each wins</th>
+								<th>Win per bet</th>
 								<td>{{horse.eachwin | currency}}</td>
 							</tr>
 						</table>
